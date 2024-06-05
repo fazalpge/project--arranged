@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table, th, td {
+  border:1px solid black;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #04AA6D;
+  color: white;
+}
+
+
+.topnav a.split {
+  float: right;
+  background-color: #3e31f5;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#registration">Registration</a>
+  <a href="#about" class="split">LOGIN</a>
+</div>
+
+<div style="padding-left:16px">
+  <h2>AI Based Smart ERP Next</h2>
+  <p>The current frontend layout.</p>
+  <strong>mysql data </strong>
+  <table style="width:100%">
+   <tr>
+     <th>Name</th>
+     <th>Employee at risk</th>
+     <th>Employee not at risk</th>
+   </tr>
+   
+     {% for i in Employees %}
+   <tr>
+     <td>{{i.name}}</td>
+     <td>{{i.atrisk}}</td>
+     <td>{{i.notrisk}}</td>
+   </tr>
+     {% endfor %}
+   
+ </table>
+  <br>
+ 
+</div>
+
+</body>
+</html>
+
